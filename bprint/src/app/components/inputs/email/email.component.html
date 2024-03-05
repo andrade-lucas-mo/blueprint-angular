@@ -1,0 +1,11 @@
+<mat-form-field>
+    <mat-label>{{ title }}</mat-label>
+    <input matInput type="email" placeholder="Ex. pat@example.com" [formControl]="emailFormControl">
+    <mat-hint></mat-hint>
+    @if (emailFormControl.hasError('email') && !emailFormControl.hasError('required')) {
+        <mat-error>Please enter a valid email address</mat-error>
+    }
+    @if (emailFormControl.hasError('required')) {
+        <mat-error>Email is <strong>required</strong></mat-error>
+    }
+</mat-form-field>
